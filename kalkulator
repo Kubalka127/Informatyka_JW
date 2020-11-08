@@ -1,0 +1,56 @@
+#!/bin/bash
+
+
+if [ "$1" = "-h" ]
+then
+
+cat help.txt
+
+else
+
+echo "Witaj $USER w programie  kalkulator"
+
+
+sleep 2
+
+zapytanie="t"
+while [ "$zapytanie" = "t" ]
+do
+
+clear
+
+echo "podaj a"
+read aa
+
+echo "podaj znak"
+read znak
+
+echo "podaj b"
+read bb
+
+case "$znak" in
+
+        "+")  echo "wynik z dodawaniea wynosi "
+                echo "scale=2; $aa+$bb" | bc -l;;
+
+        "-")  echo "wynik z odejmowania wynosi "
+                echo "scale=2; $aa-$bb" | bc -l;;
+
+        "*")  echo "wynik z mnozenia wynosi "
+                echo "scale=2; $aa*$bb" | bc -l;;
+
+        "/")c echo "wynik z dzielenia wynosi "
+                echo "scale=2; $aa/$bb" | bc -l;;
+
+        *) echo "wpisano zly znak"
+
+esac
+
+echo "czy chcesz wykonac nastepne dzialanie t/n?:"
+read zapytanie
+
+done
+echo "Milego dnia!"
+fi
+
+
