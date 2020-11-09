@@ -1,0 +1,54 @@
+#!/bin/bash
+if ["$1" = "-h"]
+then
+cat instrukcja.txt
+
+else
+clear
+echo -e "Witaj w ksiazce telefonicznej\n"
+sleep 1
+kontynuacja="tak"
+while [ "$kontynuacja" = "tak" ]
+do
+
+echo -e "Co chcesz zrobic?"
+echo -e "\t1. Dodac nowy kontakt"
+echo -e "\t2. Wyswietlic dane:"
+echo -e "\t3. Sortowac dane"
+echo -e "\t4. Wyszukac osobe"
+echo -e "\t0. Wyjscie z programu\n"
+
+echo "Podaj numer (1, 2, 3, 4 lub 0):"
+
+read numer
+
+case "$numer" in
+1)
+
+        ./dodawanie.sh;;
+2)
+        cat dane.txt | less
+        clear
+        ;;
+3)
+        sort -d dane.txt | less;;
+4)
+        echo "Wpisz nazwisko"
+        read nazwisk
+        grep -i "^$nazwisk" dane.txt;;
+
+
+0)
+        echo "dziekuje za skorzystanie z programu"
+
+        sleep 3
+        clear
+        break
+        ;;
+
+*)
+        echo "Zly numer"
+esac
+
+done
+fi
