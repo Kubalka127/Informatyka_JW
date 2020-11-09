@@ -19,7 +19,7 @@ echo -e "\t4. Wyszukac osobe"
 echo -e "\t5. Wyswietlic instrukcje"
 echo -e "\t0. Wyjscie z programu\n"
 
-echo "Podaj numer (1, 2, 3, 4 lub 0):"
+echo "Podaj numer (1, 2, 3, 4, 5 lub 0):"
 
 read numer
 
@@ -39,7 +39,7 @@ case "$numer" in
         grep -i "^$nazwisk" dane.txt;;
 
 5)     
-        cat instrukcja.txt | less
+        cat instrukcja.txt | less;;
 0)
         echo "dziekuje za skorzystanie z programu"
 
