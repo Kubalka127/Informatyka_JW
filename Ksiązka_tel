@@ -16,6 +16,7 @@ echo -e "\t1. Dodac nowy kontakt"
 echo -e "\t2. Wyswietlic dane:"
 echo -e "\t3. Sortowac dane"
 echo -e "\t4. Wyszukac osobe"
+echo -e "\t5. Wyswietlic instrukcje"
 echo -e "\t0. Wyjscie z programu\n"
 
 echo "Podaj numer (1, 2, 3, 4 lub 0):"
@@ -37,7 +38,8 @@ case "$numer" in
         read nazwisk
         grep -i "^$nazwisk" dane.txt;;
 
-
+5)     
+        cat instrukcja.txt | less
 0)
         echo "dziekuje za skorzystanie z programu"
 
